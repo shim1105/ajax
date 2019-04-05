@@ -29,7 +29,6 @@ public class AddrServiceImpl implements AddrSerice {
 		if(paramMap.get("blockCount")!=null) {
 			blockCount=Integer.parseInt(paramMap.get("blockCount"));
 		}
-		request.setAttribute("ad_dong", paramMap.get("ad_dong"));
 		request.setAttribute("page", page);
 		request.setAttribute("pageCount", pageCount);
 		request.setAttribute("blockCount", blockCount);

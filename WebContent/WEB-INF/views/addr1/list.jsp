@@ -9,7 +9,7 @@
 <body>
 <script >
 	function changePageCount(obj){
-		location.href="/addr/list?page=${page}&ad_dong=${ad_dong}&pageCount="+obj.value;
+		location.href="/addr/list?page=${page}&ad_dong=${param.ad_dong}&pageCount="+obj.value;
 	}
 	function search(){
 	
@@ -18,7 +18,7 @@
 		
 	}
 </script>
-<label for="ad_dong" >읍면동 : </label><input type="text" name="ad_dong" id="ad_dong" value="${ad_dong}">   
+<label for="ad_dong" >읍면동 : </label><input type="text" name="ad_dong" id="ad_dong" value="${param.ad_dong}">   
 <button onclick="search()" >검색</button>
 <select name="pageCount" onchange="changePageCount(this)">
 	<option value="10"
@@ -69,24 +69,24 @@
 		</c:if>
 			<td colspan="7" align="center">
 			<c:if test="${1!=page }">
-					<a href="/addr/list?page=1&pageCount=${pageCount}&ad_dong=${ad_dong}">◀</a>
+					<a href="/addr/list?page=1&pageCount=${pageCount}&ad_dong=${param.ad_dong}">◀</a>
 			</c:if>
 			<c:if test="${11<=page }">
-					<a href="/addr/list?page=${page-10}&pageCount=${pageCount}&ad_dong=${ad_dong}">◁</a>
+					<a href="/addr/list?page=${page-10}&pageCount=${pageCount}&ad_dong=${param.ad_dong}">◁</a>
 			</c:if>
 			<c:forEach var="p" begin="${fBlock }" end="${lBlock }">
 				<c:if test="${p==page}">
 					<b>[${p}]</b>
 				</c:if>
 				<c:if test="${ p!=page}">
-					<a href="/addr/list?page=${p}&pageCount=${pageCount}&ad_dong=${ad_dong}">[${p}]</a>
+					<a href="/addr/list?page=${p}&pageCount=${pageCount}&ad_dong=${param.ad_dong}">[${p}]</a>
 				</c:if>
 			</c:forEach>
 			<c:if test="${(totalPageCnt-10)>=page }">
-					<a href="/addr/list?page=${page+10}&pageCount=${pageCount}&ad_dong=${ad_dong}">▷</a>
+					<a href="/addr/list?page=${page+10}&pageCount=${pageCount}&ad_dong=${param.ad_dong}">▷</a>
 			</c:if>
 			<c:if test="${totalPageCnt!=page }">
-					<a href="/addr/list?page=${totalPageCnt}&pageCount=${pageCount}&ad_dong=${ad_dong}">▶</a>
+					<a href="/addr/list?page=${totalPageCnt}&pageCount=${pageCount}&ad_dong=${param.ad_dong}">▶</a>
 			</c:if></td>
 		</tr>
 
