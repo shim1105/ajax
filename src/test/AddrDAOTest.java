@@ -17,10 +17,8 @@ public class AddrDAOTest {
 	@Test
 	public void test() {
 		Map<String,String> addr = new HashMap<>();
-		addr.put("sNum", "11");
-		addr.put("lNum", "20");
-		List<Map<String,String>> addrList=adao.selectAddrList(addr);
-		assertEquals(10, addrList.size());   // assertEquals는 <> 같다 '이것은 이것이 거야' 라는 것으로 이해하면 쉬움 .  
+		addr.put("ad_num", "11");
+		assertEquals(10, addr.size());   // assertEquals는 <> 같다 '이것은 이것이 거야' 라는 것으로 이해하면 쉬움 .  
 	}
 //	@Test
 //	public void addrCountTest() {

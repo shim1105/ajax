@@ -8,4 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 public interface AddrSerice {
 	public List<Map<String,String>> selectAddrList(HttpServletRequest request);
 	public int selectTotalAddrCount();
+	public void selectAddr(HttpServletRequest request);
+
+
 }

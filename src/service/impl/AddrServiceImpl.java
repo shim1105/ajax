@@ -20,13 +20,13 @@ public class AddrServiceImpl implements AddrSerice {
 		int page = 1;
 		int pageCount = 10;
 		int blockCount = 10;
-		if (paramMap.get("page") != null) {
+		if (paramMap.get("page") != null && !"".equals(paramMap.get("page"))) {
 			page = Integer.parseInt(paramMap.get("page"));
 		}
-		if(paramMap.get("pageCount")!=null) {
+		if(paramMap.get("pageCount")!=null && !"".equals(paramMap.get("pageCount"))) {
 			pageCount=Integer.parseInt(paramMap.get("pageCount"));
 		}
-		if(paramMap.get("blockCount")!=null) {
+		if(paramMap.get("blockCount")!=null  && !"".equals(paramMap.get("blockCount"))) {
 			blockCount=Integer.parseInt(paramMap.get("blockCount"));
 		}
 		request.setAttribute("page", page);
@@ -63,6 +63,23 @@ public class AddrServiceImpl implements AddrSerice {
 
 		return 0;
 //				adao.selectTotalAddrCount();
+	}
+
+	@Override
+	public void selectAddr(HttpServletRequest request) {
+		Map<String, String> paramMap = Command.getSingleMap(request);
+		int page = 1;
+		int pageCount = 10;
+		if (paramMap.get("page") != null && !"".equals(paramMap.get("page"))) {
+			page = Integer.parseInt(paramMap.get("page"));
+		}
+		if(paramMap.get("pageCount")!=null&& !"".equals(paramMap.get("pageCount"))) {
+			pageCount=Integer.parseInt(paramMap.get("pageCount"));
+		}
+		request.setAttribute("page", page);
+		request.setAttribute("pageCount", pageCount);
+		request.setAttribute("addr", adao.selectAddr(paramMap));
+		
 	}
 
 }

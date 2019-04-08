@@ -57,7 +57,7 @@
 				<td>${addr.ad_num}</td>
 				<td>${addr.ad_sido}</td>
 				<td>${addr.ad_gugun}</td>
-				<td>${addr.ad_dong}</td>
+				<td><a href="/addr/view?ad_num=${addr.ad_num}&page=${page}&pageCount=${pageCount}&ad_dong=${param.ad_dong}">${addr.ad_dong}</a></td>
 				<td>${addr.ad_lee}</td>
 				<td>${addr.ad_bunji}</td>
 				<td>${addr.ad_ho}</td>
